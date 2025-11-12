@@ -1,18 +1,39 @@
-import { sql } from "drizzle-orm";
-import { pgTable, text, varchar } from "drizzle-orm/pg-core";
-import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-export const users = pgTable("users", {
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  username: text("username").notNull().unique(),
-  password: text("password").notNull(),
+export const menuItemSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  description: z.string(),
+  price: z.number(),
+  category: z.enum(["appetizer", "entree", "dessert"]),
+  imageUrl: z.string(),
 });
 
-export const insertUserSchema = createInsertSchema(users).pick({
-  username: true,
-  password: true,
+export const eventDetailsSchema = z.object({
+  name: z.string(),
+  tagline: z.string(),
+  dates: z.string(),
+  times: z.string(),
+  location: z.object({
+    name: z.string(),
+    address: z.string(),
+    city: z.string(),
+    coordinates: z.object({
+      lat: z.number(),
+      lng: z.number(),
+    }),
+  }),
+  seatingInfo: z.string(),
+  parkingInfo: z.string(),
+  contactEmail: z.string(),
+  contactPhone: z.string(),
 });
 
-export type InsertUser = z.infer<typeof insertUserSchema>;
-export type User = typeof users.$inferSelect;
+export const storySchema = z.object({
+  title: z.string(),
+  paragraphs: z.array(z.string()),
+});
+
+export type MenuItem = z.infer<typeof menuItemSchema>;
+export type EventDetails = z.infer<typeof eventDetailsSchema>;
+export type Story = z.infer<typeof storySchema>;
