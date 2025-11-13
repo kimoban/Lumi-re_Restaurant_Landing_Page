@@ -1,6 +1,6 @@
 export default async function handler(_req: any, res: any) {
   try {
-    const { storage } = await import("../server/storage");
+    const { storage } = await import("../server/storage.ts");
     try {
       const story = await storage.getStory();
       res.status(200).json(story);
