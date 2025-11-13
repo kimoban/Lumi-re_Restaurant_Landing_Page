@@ -1,4 +1,19 @@
+function parseJSONEnv<T>(key: string): T | undefined {
+  const raw = process.env[key];
+  if (!raw) return undefined;
+  try {
+    return JSON.parse(raw) as T;
+  } catch {
+    return undefined;
+  }
+}
+
 export default async function handler(_req: any, res: any) {
+  const envStory = parseJSONEnv<any>("STORY_JSON");
+  if (envStory) {
+    return res.status(200).json(envStory);
+  }
+
   const story = {
     title: "A Limited-Time Experience",
     paragraphs: [

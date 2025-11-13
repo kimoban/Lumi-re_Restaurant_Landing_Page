@@ -1,4 +1,19 @@
+function parseJSONEnv<T>(key: string): T | undefined {
+  const raw = process.env[key];
+  if (!raw) return undefined;
+  try {
+    return JSON.parse(raw) as T;
+  } catch {
+    return undefined;
+  }
+}
+
 export default async function handler(_req: any, res: any) {
+  const envDetails = parseJSONEnv<any>("EVENT_DETAILS_JSON");
+  if (envDetails) {
+    return res.status(200).json(envDetails);
+  }
+
   const details = {
     name: "Lumière",
     tagline: "An Intimate Culinary Journey",

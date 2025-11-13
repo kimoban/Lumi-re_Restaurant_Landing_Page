@@ -1,5 +1,21 @@
+function parseJSONEnv<T>(key: string): T | undefined {
+  const raw = process.env[key];
+  if (!raw) return undefined;
+  try {
+    return JSON.parse(raw) as T;
+  } catch {
+    return undefined;
+  }
+}
+
 export default async function handler(_req: any, res: any) {
-  // Inline static data to avoid module resolution issues in serverless bundling
+  // Allow override via MENU_ITEMS_JSON env (expects JSON array of MenuItem)
+  const envItems = parseJSONEnv<any[]>("MENU_ITEMS_JSON");
+  if (envItems && Array.isArray(envItems) && envItems.length > 0) {
+    return res.status(200).json(envItems);
+  }
+
+  // Default inline static data
   const items = [
     {
       id: "1",
