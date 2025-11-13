@@ -1,4 +1,4 @@
-import { type MenuItem, type EventDetails, type Story } from "@shared/schema";
+import { type MenuItem, type EventDetails, type Story } from "../shared/schema";
 
 export interface IStorage {
   getMenuItems(): Promise<MenuItem[]>;
