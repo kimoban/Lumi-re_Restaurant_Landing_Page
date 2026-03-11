@@ -19,6 +19,10 @@ const imageMap: Record<string, string> = {
   "6": dessertImg,
 };
 
+function formatCedis(amount: number) {
+  return `₵${amount.toLocaleString("en-GH")}`;
+}
+
 export function PrintableMenu() {
   const printRef = useRef<HTMLDivElement>(null);
   const { data: menuItems, isLoading, error } = useQuery<MenuItem[]>({
@@ -164,7 +168,7 @@ export function PrintableMenu() {
                           <h3 className="font-display text-xl text-black">
                             {item.name}
                           </h3>
-                          <span className="text-gray-700">${item.price}</span>
+                          <span className="text-gray-700">{formatCedis(item.price)}</span>
                         </div>
                         <p className="text-sm text-gray-600 leading-relaxed">
                           {item.description}
@@ -192,7 +196,7 @@ export function PrintableMenu() {
                           <h3 className="font-display text-xl text-black">
                             {item.name}
                           </h3>
-                          <span className="text-gray-700">${item.price}</span>
+                          <span className="text-gray-700">{formatCedis(item.price)}</span>
                         </div>
                         <p className="text-sm text-gray-600 leading-relaxed">
                           {item.description}
@@ -220,7 +224,7 @@ export function PrintableMenu() {
                           <h3 className="font-display text-xl text-black">
                             {item.name}
                           </h3>
-                          <span className="text-gray-700">${item.price}</span>
+                          <span className="text-gray-700">{formatCedis(item.price)}</span>
                         </div>
                         <p className="text-sm text-gray-600 leading-relaxed">
                           {item.description}

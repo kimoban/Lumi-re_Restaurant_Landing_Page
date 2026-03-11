@@ -1,5 +1,11 @@
 import { type MenuItem, type EventDetails, type Story } from "../shared/schema";
 
+const USD_TO_GHS = 15.5;
+
+function toCedis(usdPrice: number) {
+  return Math.round((usdPrice * USD_TO_GHS) / 5) * 5;
+}
+
 export interface IStorage {
   getMenuItems(): Promise<MenuItem[]>;
   getEventDetails(): Promise<EventDetails>;
@@ -12,7 +18,7 @@ export class MemStorage implements IStorage {
       id: "1",
       name: "Sekondi Sea Scallops",
       description: "Seared scallops, coconut-citrus butter, grilled kontomire oil",
-      price: 26,
+      price: toCedis(26),
       category: "appetizer",
       imageUrl: "/assets/generated_images/Seared_scallops_signature_dish_22aa565e.png",
     },
@@ -20,7 +26,7 @@ export class MemStorage implements IStorage {
       id: "2",
       name: "Atlantic Oysters on Ice",
       description: "Chilled oysters, sobolo mignonette, lime, sea salt",
-      price: 22,
+      price: toCedis(22),
       category: "appetizer",
       imageUrl: "/assets/generated_images/Oysters_appetizer_dish_c78a41ea.png",
     },
@@ -28,7 +34,7 @@ export class MemStorage implements IStorage {
       id: "3",
       name: "Charred Octopus Suya",
       description: "Wood-grilled octopus, smoked suya spice, sweet potato, herb sauce",
-      price: 30,
+      price: toCedis(30),
       category: "appetizer",
       imageUrl: "/assets/generated_images/Grilled_octopus_signature_dish_7290cf5f.png",
     },
@@ -36,7 +42,7 @@ export class MemStorage implements IStorage {
       id: "4",
       name: "Coastal Jollof Lobster",
       description: "Butter-poached lobster, smoky jollof rice, charred peppers, herb jus",
-      price: 48,
+      price: toCedis(48),
       category: "entree",
       imageUrl: "/assets/generated_images/Wagyu_steak_signature_dish_cf081c50.png",
     },
@@ -44,7 +50,7 @@ export class MemStorage implements IStorage {
       id: "5",
       name: "Fanti Catch with Banku Crumble",
       description: "Market fish, pepper relish, banku crisp, garden herbs",
-      price: 34,
+      price: toCedis(34),
       category: "entree",
       imageUrl: "/assets/generated_images/Pasta_carbonara_signature_dish_f547b1a1.png",
     },
@@ -52,7 +58,7 @@ export class MemStorage implements IStorage {
       id: "6",
       name: "Cocoa Souffle",
       description: "Ghana cocoa souffle, salted caramel, roasted pineapple cream",
-      price: 16,
+      price: toCedis(16),
       category: "dessert",
       imageUrl: "/assets/generated_images/Chocolate_dessert_signature_dish_713c45e1.png",
     },

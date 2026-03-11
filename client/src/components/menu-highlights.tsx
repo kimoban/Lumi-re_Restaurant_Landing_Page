@@ -18,6 +18,10 @@ const imageMap: Record<string, string> = {
   "6": dessertImg,
 };
 
+function formatCedis(amount: number) {
+  return `₵${amount.toLocaleString("en-GH")}`;
+}
+
 export function MenuHighlights() {
   const { data: menuItems, isLoading, error } = useQuery<MenuItem[]>({
     queryKey: ["/api/menu"],
@@ -109,7 +113,7 @@ export function MenuHighlights() {
                     className="font-body text-lg text-muted-foreground"
                     data-testid={`text-dish-price-${item.id}`}
                   >
-                    ${item.price}
+                    {formatCedis(item.price)}
                   </span>
                 </div>
                 <p
