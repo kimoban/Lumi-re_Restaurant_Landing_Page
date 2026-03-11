@@ -1,7 +1,9 @@
 import { HeroSection } from "@/components/hero-section";
 import { StorySection } from "@/components/story-section";
+import { ChefsTasting } from "@/components/chefs-tasting";
 import { MenuHighlights } from "@/components/menu-highlights";
 import { AmbianceGallery } from "@/components/ambiance-gallery";
+import { SocialProofSection } from "@/components/social-proof";
 import { EventDetails } from "@/components/event-details";
 import { PrintableMenu } from "@/components/printable-menu";
 import { ReservationFooter } from "@/components/reservation-footer";
@@ -13,8 +15,10 @@ export default function Home() {
       <Navigation />
       <HeroSection />
       <StorySection />
+      <ChefsTasting />
       <MenuHighlights />
       <AmbianceGallery />
+      <SocialProofSection />
       <EventDetails />
       <PrintableMenu />
       <ReservationFooter />
