@@ -61,14 +61,14 @@ export function EventDetails() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="h-[400px] lg:h-[500px] rounded-lg overflow-hidden border border-card-border">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.95373631531677!3d-37.81720997975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2sau!4v1509579134!5m2!1sen!2sau"
+              src="https://www.google.com/maps?q=Cape+Coast,+Ghana&z=13&output=embed"
               width="100%"
               height="100%"
-              style={{ border: 0 }}
+              className="border-0"
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Restaurant Location"
+              title="Cape Coast Location"
               data-testid="map-location"
             />
           </div>
@@ -95,12 +95,12 @@ export function EventDetails() {
                 <Calendar className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-display text-xl mb-1" data-testid="text-dates-label">
-                    Dates
+                    Availability
                   </h3>
                   <p className="text-muted-foreground" data-testid="text-dates-value">
                     {eventDetails.dates}
                     <br />
-                    Thursday through Sunday only
+                    Reservations recommended for lunch and dinner service
                   </p>
                 </div>
               </div>

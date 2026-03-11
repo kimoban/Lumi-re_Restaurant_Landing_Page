@@ -46,10 +46,10 @@ export function PrintableMenu() {
             className="font-display text-4xl md:text-5xl font-light mb-6 tracking-wide"
             data-testid="text-print-menu-title"
           >
-            Take Our Menu Home
+            Take Cape Coast to the Table
           </h2>
           <p className="text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">
-            Download or print our complete menu with beautiful food photography
+            Download or print our current menu featuring Ghanaian coastal flavours and seasonal seafood
           </p>
           <Button
             size="lg"
@@ -139,9 +139,9 @@ export function PrintableMenu() {
             <h1 className="font-display text-5xl font-light mb-2 text-black">
               Lumière
             </h1>
-            <p className="text-lg text-gray-700">An Intimate Culinary Journey</p>
+            <p className="text-lg text-gray-700">Cape Coast Coastal Dining, Refined</p>
             <p className="text-sm text-gray-600 mt-2">
-              February 14-28, 2025 • Downtown Arts District
+              Cape Coast, Ghana, West Africa
             </p>
           </div>
 
@@ -235,11 +235,11 @@ export function PrintableMenu() {
 
           <div className="mt-12 pt-8 border-t-2 border-black text-center text-sm text-gray-600">
             <p className="mb-2">
-              <strong>The Gallery Warehouse</strong> • 425 Arts District Boulevard
-              • Downtown, CA 90013
+              <strong>Lumière Dining Room</strong> • Cape Coast
+              • Ghana, West Africa
             </p>
             <p className="mb-2">
-              Reservations: (213) 555-1234 • reservations@lumierepopup.com
+              Reservations: +233 20 555 1234 • reservations@lumierecapecoast.com
             </p>
             <p>Limited seating available • Reservations required</p>
           </div>

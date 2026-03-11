@@ -16,10 +16,13 @@ export function HeroSection() {
       className="relative h-screen flex items-center justify-center overflow-hidden"
       data-testid="section-hero"
     >
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
+      <div className="absolute inset-0">
+        <img
+          src={heroImage}
+          alt="Lumière dining room ambiance"
+          className="hero-background-image"
+          data-testid="img-hero-background"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
       </div>
 
@@ -34,13 +37,13 @@ export function HeroSection() {
           className="font-body text-xl md:text-2xl text-white/90 mb-4 font-light tracking-wide"
           data-testid="text-hero-subtitle"
         >
-          An Intimate Culinary Journey
+          Cape Coast Coastal Dining, Refined
         </p>
         <p
           className="font-body text-lg md:text-xl text-white/80 mb-12 font-light"
           data-testid="text-hero-dates"
         >
-          February 14-28, 2025 • Downtown Arts District
+          Ghanaian coastal flavours, seasonal seafood, and Atlantic evenings in Cape Coast
         </p>
         <Button
           size="lg"

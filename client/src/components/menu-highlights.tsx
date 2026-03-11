@@ -79,7 +79,7 @@ export function MenuHighlights() {
           className="text-center text-muted-foreground text-lg mb-16 max-w-2xl mx-auto"
           data-testid="text-menu-subtitle"
         >
-          A curated selection of our most celebrated creations, showcasing seasonal ingredients and innovative techniques
+          Signature plates inspired by Ghana's coast, Cape Coast markets, and the Atlantic catch of the season
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">

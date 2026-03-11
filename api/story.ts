@@ -15,11 +15,11 @@ export default async function handler(_req: any, res: any) {
   }
 
   const story = {
-    title: "A Limited-Time Experience",
+    title: "Rooted in Cape Coast",
     paragraphs: [
-      "For two weeks only, Lumière transforms an intimate space in the heart of the Arts District into a celebration of culinary artistry. This exclusive pop-up brings together seasonal ingredients, innovative techniques, and a passion for creating unforgettable dining moments.",
-      "Chef Elena Rousseau, formerly of Michelin-starred establishments across Europe, returns to her hometown to share a deeply personal menu that weaves together family traditions with modern sensibilities. Each dish tells a story, each flavor evokes a memory.",
-      "With only 24 seats available per evening, Lumière offers an intimate atmosphere where every detail matters—from the hand-selected ceramics to the carefully curated wine pairings. This is dining as it should be: thoughtful, beautiful, and fleeting.",
+      "Lumière draws its identity from Cape Coast's shoreline, fishing harbours, and storied streets, translating familiar Ghanaian ingredients into a polished coastal dining experience. Each menu is shaped by what arrives fresh from the sea, the market, and nearby farms across the Central Region.",
+      "The kitchen layers local character into every course, from sobolo-brightened shellfish to smoky pepper sauces, Ghana cocoa desserts, and seasonal produce prepared with a light, contemporary touch. The result is elegant without losing the warmth and generosity that define hospitality on the coast.",
+      "Whether guests arrive from the castle district, the university quarter, or a weekend stay along the Atlantic, Lumière is designed to feel unmistakably Cape Coast: intimate, grounded, and memorable long after the last course.",
     ],
   };
 

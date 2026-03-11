@@ -7,12 +7,13 @@ import { useToast } from "@/hooks/use-toast";
 export function ReservationFooter() {
   const [email, setEmail] = useState("");
   const { toast } = useToast();
+  const currentYear = new Date().getFullYear();
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
       title: "Thank you for subscribing!",
-      description: "We'll keep you updated on future pop-up events.",
+      description: "We'll keep you updated on seasonal menus, dining events, and special evenings.",
     });
     setEmail("");
   };
@@ -36,7 +37,7 @@ export function ReservationFooter() {
           className="text-xl md:text-2xl mb-8 text-primary-foreground/90 font-light"
           data-testid="text-footer-subtitle"
         >
-          Limited seating available for this exclusive two-week engagement
+          Reserve your table for a Cape Coast evening shaped by seafood, spice, and warm hospitality
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
@@ -44,7 +45,7 @@ export function ReservationFooter() {
             size="lg"
             className="bg-white text-primary hover:bg-white/90 px-8 py-6 text-base font-medium"
             data-testid="button-call-reserve"
-            onClick={() => window.location.href = "tel:+12135551234"}
+            onClick={() => window.location.href = "tel:+233205551234"}
           >
             Call to Reserve
           </Button>
@@ -53,7 +54,7 @@ export function ReservationFooter() {
             variant="outline"
             className="border-2 border-white/30 bg-white/10 backdrop-blur-md text-white hover:bg-white/20 px-8 py-6 text-base font-medium"
             data-testid="button-email-reserve"
-            onClick={() => window.location.href = "mailto:reservations@lumierepopup.com"}
+            onClick={() => window.location.href = "mailto:reservations@lumierecapecoast.com"}
           >
             Email Reservations
           </Button>
@@ -124,7 +125,7 @@ export function ReservationFooter() {
           </div>
 
           <p className="text-sm text-primary-foreground/60" data-testid="text-copyright">
-            © 2025 Lumière Pop-Up. All rights reserved.
+            © {currentYear} Lumière. All rights reserved.
           </p>
         </div>
       </div>
